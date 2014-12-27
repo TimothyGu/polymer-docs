@@ -74,7 +74,7 @@ module Jekyll
           end
         end
       end
-      JSON.dump(elements)
+      JSON.dump(Hash[elements.sortby {|name, url| name}])
     end
 
     def in_blacklist?(s)
